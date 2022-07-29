@@ -1,38 +1,38 @@
-.App {
-  text-align: center;
+.nav-shop {
+  height: 128px;
+  background: rgb(255, 136, 92);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 136, 92, 1) 0%,
+    rgba(255, 83, 83, 1) 50%
+  );
+  -webkit-box-shadow: 0px 3px 6px 0px #00000029;
+  -moz-box-shadow: 0px 3px 6px 0px #00000029;
+  box-shadow: 0px 3px 6px 0px #00000029;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content-icon-back {
+  font-size: 28px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content-bar-search{
+  height: 84px;
+  -webkit-box-shadow: 0px 3px 6px 0px #00000029;
+  -moz-box-shadow: 0px 3px 6px 0px #00000029;
+  box-shadow: 0px 3px 6px 0px #00000029;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.icon-input{
+  position: absolute;
+  right: 23px;
+  top: 16px;
+  z-index: 10;
+  font-size: 24px;
 }
-
-.App-link {
-  color: #61dafb;
+.form-control.formsearch{
+  border-radius: 8px !important;
+  border-color: #FF5D54;
+  height: 56px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.formsearch::placeholder, .icon-input{
+  color: #FF5D54;
+  
 }
