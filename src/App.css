@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@import url("https://db.onlinewebfonts.com/c/47ff3156fe928e750d0468143555356f?family=SofiaProSoftW01-Regular");
+
+.App {
+  background-color: #efefef;
+}
+h1{
+  font: normal normal bold 34px/42px "SofiaProSoftW01-Regular";
+}
 .nav-shop {
   height: 128px;
   background: rgb(255, 136, 92);
@@ -14,25 +23,178 @@
 .content-icon-back {
   font-size: 28px;
 }
-.content-bar-search{
+.content-bar-search {
+  top: 128px !important;
   height: 84px;
   -webkit-box-shadow: 0px 3px 6px 0px #00000029;
   -moz-box-shadow: 0px 3px 6px 0px #00000029;
   box-shadow: 0px 3px 6px 0px #00000029;
 }
-.icon-input{
+.icon-input {
   position: absolute;
   right: 23px;
   top: 16px;
   z-index: 10;
   font-size: 24px;
 }
-.form-control.formsearch{
+.form-control.formsearch {
   border-radius: 8px !important;
-  border-color: #FF5D54;
+  border-color: #ff5d54;
   height: 56px;
 }
-.formsearch::placeholder, .icon-input{
-  color: #FF5D54;
-  
+.formsearch::placeholder,
+.icon-input {
+  color: #ff5d54;
+}
+
+.aside-left {
+  background-color: transparent;
+  position: fixed;
+  width: 184px;
+  z-index: 9999;
+  height: 95vh;
+  top: 5vh;
+  /* -webkit-box-shadow: 0px 3px 6px 0px #00000029;
+  -moz-box-shadow: 0px 3px 6px 0px #00000029;
+  box-shadow: 0px 3px 6px 0px #00000029; */
+}
+.aside-left .aside-logo-content {
+  background-color: #ff5d54;
+  height: 95px;
+  width: 164px;
+  border-radius: 0px 24px 0px 0px;
+  box-shadow: 6px 3px 6px #00000029;
+}
+
+.aside-logo-content {
+  color: #fff;
+  font-size: 44px;
+}
+.aside-left .modules {
+  background-color: #fff;
+  height: 680px;
+  border-radius: 0px 24px 0px 0px;
+  box-shadow: 6px -3px 6px #00000029;
+}
+
+.list-modules {
+  height: 230px;
+  overflow: auto;
+}
+
+.item-modules {
+  list-style: none;
+  color: #ff5d54;
+}
+.item-modules span {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+}
+
+.content-items{
+  margin-top: 215px;
+}
+
+.btnColor {
+  background-color: #ff5d54 !important;
+  border-color: #ff5d54 !important;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 30px !important;
+}
+
+.aside-right {
+  position: fixed;
+  height: 100vh;
+  width: 184px;
+  background-color: transparent;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+  /* box-shadow: 0px 3px 6px #00000029; */
+}
+
+.top-cart {
+  position: relative;
+  height: 183px;
+  background: #fff;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 24px 0px 0px 0px;
+}
+.content-title-cart div i {
+  font-size: 36px;
+  color: #ff5d54;
+}
+.title-cart {
+  font-size: 16px;
+  color: #ff5d54;
+  font-family: "Roboto", sans-serif;
+}
+
+.subtotal-amount-content {
+  background-color: #efefef;
+  width: 100%;
+}
+.subtotal-amount-content div {
+  border-top: 1px dashed #f20000;
+  border-bottom: 1px dashed #f20000;
+}
+.text-inner-subtotal span {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+.text-inner-subtotal p {
+  font-family: "SofiaProSoftW01-Regular";
+  font-size: 24px;
+}
+
+.list-cart-items {
+  height: 330px;
+  background: #f4f4f4 0% 0% no-repeat padding-box;
+}
+.pay-reason-content {
+  height: calc(100vh - 330px - 183px);
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px -3px 6px #00000029;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #c9c9c9 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 14px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c9c9c9;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
+
+.card-items-wd {
+  width: 225px;
+  height: 225px;
+  background-color: #fff;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 12px;
+}
+
+.card-items-wd img {
+  width: 96px;
+  height: 96px;
+}
+
+.card-items-wd span {
+  text-align: center;
+  font: normal normal bold 12px/16px Roboto;
 }
