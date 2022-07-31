@@ -4,6 +4,7 @@ import CardItem from "../components/cardItem";
 
 const ProductsList = ({childToParent}) => {
   const [products, setProducts] = useState([]);
+  const [inputText, setInputText] = useState("");
   const [isError, setIsError] = useState(false);
   const [itemInCart, setItemInCart] = useState([]);
   const [handleCounter, setHandleCounter] = useState({});
@@ -24,6 +25,23 @@ const ProductsList = ({childToParent}) => {
         setIsError(true);
       });
   }, []);
+
+  let inputHandler = (e) => {
+    //convert input text to lower case
+    var lowerCase = e.target.value.toLowerCase();
+    setInputText(lowerCase);
+  };
+
+  const filteredData = products.filter((el) => {
+    //if no input the return the original
+    if (inputText === '') {
+        return el;
+    }
+    //return the item which contains the user input
+    else {
+        return el.title.toLowerCase().includes(inputText)
+    }
+})
 
   function reduceItems(obj, prop) {
     return obj.reduce(function (acc, item) {
@@ -63,6 +81,7 @@ const ProductsList = ({childToParent}) => {
             className="form-control formsearch"
             id="inlineFormInputGroupUsername2"
             placeholder="Buscar Producto"
+            onChange={inputHandler}
           />
           <div className="input-group-append icon-input">
             <i className="fas fa-search"></i>
@@ -74,7 +93,7 @@ const ProductsList = ({childToParent}) => {
           <h3> Ups! hubo un error al cargar los productos</h3>
         ) : (
           <>
-            {products.map((item) => (
+            {filteredData.map((item) => (
               <CardItem
                 key={item.id}
                 id={item.id}
@@ -84,6 +103,7 @@ const ProductsList = ({childToParent}) => {
                 itemInCart={itemInCart}
                 setItemInCart={setItemInCart}
                 handleCounter={handleCounter}
+                setHandleCounter={setHandleCounter}
               ></CardItem>
             ))}
           </>

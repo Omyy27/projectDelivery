@@ -17,6 +17,9 @@ const CardItem = (props) => {
     // Counter state is decremented
     if (count > 0) {
         setCount(count - 1);
+        // var newAr = props.handleCounter[props.id];
+        // props.setHandleCounter(newAr.shift())
+        // console.log(newAr);
     } else {
       return;
     }
