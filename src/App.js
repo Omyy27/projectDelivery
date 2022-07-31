@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import "./App.css";
 import { Container } from "react-bootstrap";
 import NavbarComponent from "./components/navbar";
@@ -6,6 +7,11 @@ import AsideLeft from "./components/asideLeft";
 import AsideRight from "./components/asideRight";
 
 function App() {
+  const [data, setData] = useState({});
+  
+  const childToParent = (childdata) => {
+    setData(childdata);
+  }
   var arrModules = [
     { id: 1, name: "Inicio", icon: 'fas fa-home', active:  false},
     { id: 2, name: "Clientes", icon: 'fas fa-users', active:  false},
@@ -23,11 +29,11 @@ function App() {
       <Container>
         <div className="row">
           <div className="col-md-12">
-            <ProductsList></ProductsList>
+            <ProductsList childToParent={childToParent}></ProductsList>
           </div>
         </div>
       </Container>
-      <AsideRight></AsideRight>
+      <AsideRight data={data}></AsideRight>
     </div>
   );
 }

@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Navbar } from "react-bootstrap";
 import CardItem from "../components/cardItem";
 
-const ProductsList = () => {
+const ProductsList = ({childToParent}) => {
   const [products, setProducts] = useState([]);
   const [isError, setIsError] = useState(false);
-
+  const [itemInCart, setItemInCart] = useState([]);
+  const [handleCounter, setHandleCounter] = useState({});
+  
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => {
@@ -23,9 +25,38 @@ const ProductsList = () => {
       });
   }, []);
 
+  function reduceItems(obj, prop) {
+    return obj.reduce(function (acc, item) {
+      // console.log(item[0][prop]);
+      let key = item[0][prop]
+      if (!acc[key]) {
+        acc[key] = []
+      }
+  
+      acc[key].push(item)
+      return acc
+    }, {})
+  
+  }
+  useEffect(() => {
+    if (itemInCart !== []) {
+      let groupItems = reduceItems(itemInCart, 'id')
+      setHandleCounter(groupItems)
+      
+      // console.log(handleCounter);
+    }
+  },[itemInCart, ]);
+
+  useEffect(() => {
+    childToParent(handleCounter);
+  });
+
   return (
     <>
-      <Navbar fixed="top" className="justify-content-center content-bar-search bg-white">
+      <Navbar
+        fixed="top"
+        className="justify-content-center content-bar-search bg-white"
+      >
         <div className="input-group mb-2 mr-sm-2 col-8">
           <input
             type="text"
@@ -44,7 +75,16 @@ const ProductsList = () => {
         ) : (
           <>
             {products.map((item) => (
-              <CardItem key={item.id} itemTitle={item.title} imgProduct={item.image}></CardItem>
+              <CardItem
+                key={item.id}
+                id={item.id}
+                itemTitle={item.title}
+                itemPrice={item.price}
+                imgProduct={item.image}
+                itemInCart={itemInCart}
+                setItemInCart={setItemInCart}
+                handleCounter={handleCounter}
+              ></CardItem>
             ))}
           </>
         )}

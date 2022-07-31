@@ -4,7 +4,7 @@
 .App {
   background-color: #efefef;
 }
-h1{
+h1 {
   font: normal normal bold 34px/42px "SofiaProSoftW01-Regular";
 }
 .nav-shop {
@@ -22,6 +22,9 @@ h1{
 
 .content-icon-back {
   font-size: 28px;
+}
+.content-navbar-title {
+  border-bottom: dashed 2px #fff;
 }
 .content-bar-search {
   top: 128px !important;
@@ -91,7 +94,7 @@ h1{
   font-family: "Roboto", sans-serif;
 }
 
-.content-items{
+.content-items {
   margin-top: 215px;
 }
 
@@ -197,4 +200,44 @@ h1{
 .card-items-wd span {
   text-align: center;
   font: normal normal bold 12px/16px Roboto;
+}
+
+.btn-g {
+  width: 80px;
+  height: 45px;
+  background-color: #ff5d54 !important;
+  border-color: #ff5d54 !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.btn-right-plus {
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 0px 12px 12px 0px !important;
+}
+
+.btn-left-minus {
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 12px 0px 0px 12px !important;
+}
+
+.item-cart{
+  list-style: none;
+
+}
+
+.item-cart span{
+  font: normal normal normal 12px/15px "SofiaProSoftW01-Regular";
+}
+.item-cart strong{
+  font: normal normal bold 12px/15px "SofiaProSoftW01-Regular";
 }

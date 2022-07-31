@@ -1,5 +1,20 @@
-import React from "react";
-const AsideRight = () => {
+import React, { useEffect, useState } from "react";
+const AsideRight = (props) => {
+  const [cart, setCart] = useState([]);
+
+  function arrFilt() {
+    setCart(props && props.data);
+  }
+  useEffect(() => {
+    arrFilt();
+    // var dataCart = cart;
+  });
+  var array = Object.keys(cart)
+  .map(function(key) {
+      return cart[key];
+  });
+  // console.log(array);
+
   return (
     <>
       <div className="aside-right d-flex flex-column flex-wrap">
@@ -19,7 +34,15 @@ const AsideRight = () => {
             </div>
           </div>
         </div>
-        <div className="list-cart-items"></div>
+        <div className="list-cart-items p-3">
+          <ul className="p-0">
+          {/* {array.map((item) => console.log(item[0][0].title))} */}
+          {array.map((item) => <li key={item[0][0].id} className="item-cart">
+            <span>{item[0][0].title}</span>
+            <strong>${item[0][0].price+' x'+item.length}</strong>
+          </li>)}
+          </ul>
+        </div>
         <div className="pay-reason-content p-2 d-flex flex-column flex-wrap justify-content-around">
           <input
             type="tel"
@@ -27,9 +50,7 @@ const AsideRight = () => {
             id="cellphone"
             placeholder="Celular"
           />
-          <button className="btn btn-danger btnColor btn-block">
-            Vender
-          </button>
+          <button className="btn btn-danger btnColor btn-block">Vender</button>
         </div>
       </div>
     </>
