@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 const AsideRight = (props) => {
   const [cart, setCart] = useState([]);
+  const [arrCart, setArrCart] = useState([]);
+
+  const [total, setTotal] = useState(0);
 
   function arrFilt() {
     setCart(props && props.data);
@@ -9,12 +12,20 @@ const AsideRight = (props) => {
     arrFilt();
     // var dataCart = cart;
   });
-  var array = Object.keys(cart)
-  .map(function(key) {
-      return cart[key];
-  });
-  // console.log(array);
 
+  useEffect(() => {
+    var array = Object.keys(cart).map(function (key) {
+      return cart[key];
+    });
+    setArrCart(array);
+    var sumArr = array.map(function (item) {
+      return item[0][0].price * item.length;
+    });
+    const sum = sumArr.reduce((partialSum, a) => partialSum + a, 0);
+    setTotal(sum);
+  }, [cart]);
+
+  // console.log(sum);
   return (
     <>
       <div className="aside-right d-flex flex-column flex-wrap">
@@ -30,17 +41,20 @@ const AsideRight = (props) => {
           <div className="subtotal-amount-content px-2">
             <div className="text-center text-inner-subtotal">
               <span>Total</span>
-              <p className="mb-0 font-weight-bold">$20000</p>
+              <p className="mb-0 font-weight-bold">${Intl.NumberFormat().format(total)}</p>
             </div>
           </div>
         </div>
-        <div className="list-cart-items p-3">
-          <ul className="p-0">
-          {/* {array.map((item) => console.log(item[0][0].title))} */}
-          {array.map((item) => <li key={item[0][0].id} className="item-cart">
-            <span>{item[0][0].title}</span>
-            <strong>${item[0][0].price+' x'+item.length}</strong>
-          </li>)}
+        <div className="list-cart-items pt-3 pl-3 pb-3 pr-1">
+          <ul className="p-0 h-100 content-cart-list">
+            {/* {array.map((item) => console.log(item[0][0].title))} */}
+            {arrCart.map((item) => (
+              <li key={item[0][0].id} className="item-cart">
+                <span>{item[0][0].title}</span>
+                <br />
+                <strong>${item[0][0].price + " x" + item.length}</strong>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="pay-reason-content p-2 d-flex flex-column flex-wrap justify-content-around">
