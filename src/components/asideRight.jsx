@@ -60,7 +60,7 @@ const AsideRight = (props) => {
         <div className="pay-reason-content p-2 d-flex flex-column flex-wrap justify-content-around">
           <input
             type="tel"
-            className="form-control formsearch"
+            className="form-control formsearch h-auto"
             id="cellphone"
             placeholder="Celular"
           />
