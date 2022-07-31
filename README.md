@@ -2,7 +2,7 @@
 
 Proyecto hecho desde cero con 100% React.Js ⚛️(https://github.com/facebook/create-react-app).
 
-## Scripts basicos utilizados
+## Scripts básicos utilizados
 
 Instalar:
 
@@ -23,6 +23,10 @@ Se usó dicho comando para lanzar de forma optimizada la version a producción e
 
 Este proyecto cuenta con productos suministrado por un API publica [https://fakestoreapi.com/]
 
+
+## Autor
+Omar Movilla [https://cv.omprojects.com.co/]
+> Y esta es la confianza que tenemos en él, que si demandáremos alguna cosa conforme á su voluntad, él nos oye. -- 1 Juan 5:14
 
 
 
