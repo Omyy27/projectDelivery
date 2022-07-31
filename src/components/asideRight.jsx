@@ -64,7 +64,7 @@ const AsideRight = (props) => {
             id="cellphone"
             placeholder="Celular"
           />
-          <button className="btn btn-danger btnColor btn-block">Vender</button>
+          <button className="btn btn-danger btnColor btn-block" onClick={props.handleShow}>Vender</button>
         </div>
       </div>
     </>

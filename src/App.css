@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 /* @import url(""); */
-@font-face { font-family: 'SofiaProSoftW01-Regular'; 
-  src: url('./assets/fonts/47ff3156fe928e750d0468143555356f.woff2'); }
+@font-face {
+  font-family: "SofiaProSoftW01-Regular";
+  src: url("./assets/fonts/47ff3156fe928e750d0468143555356f.woff2");
+}
 .App {
   background-color: #efefef;
 }
@@ -231,17 +233,47 @@ input[type="number"] {
   border-radius: 12px 0px 0px 12px !important;
 }
 
-.item-cart{
+.item-cart {
   list-style: none;
-
 }
 
-.item-cart span{
+.item-cart span {
   font: normal normal normal 12px/15px "SofiaProSoftW01-Regular";
 }
-.item-cart strong{
+.item-cart strong {
   font: normal normal bold 12px/15px "SofiaProSoftW01-Regular";
 }
-.content-cart-list{
+.content-cart-list {
   overflow: auto;
+}
+
+.modal-backdrop,
+.modal {
+  z-index: 9999 !important;
+}
+
+.modal .modal-content {
+  border-radius: 16px !important;
+  width: 464px;
+  height: 364px;
+}
+
+.text-modal {
+  text-align: center;
+  font: normal normal bold 28px/34px "SofiaProSoftW01-Regular";
+}
+.icon-status {
+  width: 87px;
+  height: 87px;
+  transform: matrix(-1, 0, 0, -1, 0, 0);
+}
+.content-status{
+  width: 118px;
+  height: 118px;
+  background: #FF5D54 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 50%;
+}
+small{
+  font: normal normal normal 14px/22px Roboto;
 }
